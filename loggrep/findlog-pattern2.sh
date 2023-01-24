@@ -21,14 +21,14 @@ EOF
 
 find(){
     echo "Find log for TransactionNumber:" $TN
-    zgrep 'Topic:EC_EVENT_SALE_STORE' ./logs/*-eventsalestore-restful* | zgrep $TN 2>&1 | sudo tee $TN.log
-    echo "Execute command: zgrep 'Topic:EC_EVENT_SALE_STORE' ./logs/*-eventsalestore-restful* | zgrep "$TN
+    zgrep 'Topic:key_words' ./logs/*-key_words-restful* | zgrep $TN 2>&1 | sudo tee $TN.log
+    echo "Execute command: zgrep 'Topic:key_words' ./logs/*key_words-restful* | zgrep "$TN
 }
 
 findr(){
     echo "Find log for TransactionNumber:" $TN
-    zgrep 'Topic:EC_EVENT_SALE_STORE' ./logs/*/*-eventsalestore-restful* | zgrep $TN 2>&1 | tee $TN.log
-    echo "Execute command: zgrep 'Topic:EC_EVENT_SALE_STORE' ./logs/*-eventsalestore-restful* | zgrep "$TN
+    zgrep 'Topic:key_words' ./logs/*/*-key_words-restful* | zgrep $TN 2>&1 | tee $TN.log
+    echo "Execute command: zgrep 'Topic:key_words' ./logs/*key_words-restful* | zgrep "$TN
 }
 
 if [ "$#" -lt "1" ]
